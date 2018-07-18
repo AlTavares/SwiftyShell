@@ -2,7 +2,7 @@
 import Foundation
 import Basic
 
-enum Shell {
+public enum Shell {
     public static func run(_ command: String..., exitOnFailure: Bool = true) {
         let cmd = command.joined(separator: " ")
         Logger.info(cmd)
@@ -30,7 +30,7 @@ enum Shell {
     }
 }
 
-enum Logger {
+public enum Logger {
     private static let terminal: TerminalController? = {
         guard let stdout = stdoutStream as? LocalFileOutputByteStream else { return nil }
         return TerminalController(stream: stdout)
