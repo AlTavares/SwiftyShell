@@ -4,6 +4,7 @@
 
 ## Build generated
 build/
+.build/
 DerivedData
 
 ## Various settings
@@ -41,3 +42,6 @@ xcuserdata
 # Carthage/Checkouts
 
 Carthage/Build
+
+*.xcodeproj/
+*.xcworkspace/
