@@ -1,11 +1,15 @@
 
-import Foundation
 import Basic
+import Foundation
 
-public enum Shell {
+public struct Shell {
+    private init() {}
+    public static var isDryRun: Bool = false
+
     public static func run(_ command: String..., exitOnFailure: Bool = true) {
         let cmd = command.joined(separator: " ")
         Logger.info(cmd)
+        guard !isDryRun else { return }
         let process = Foundation.Process()
         process.launchPath = "/bin/sh"
         process.arguments = ["-c", cmd]
